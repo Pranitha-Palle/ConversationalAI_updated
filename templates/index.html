@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Interface</title>
+</head>
+<body>
+    <h1>Voice Interface</h1>
+
+    <h2>Record Speech to Convert to Text</h2>
+    <form id="uploadForm">
+        <button type="button" id="recordButton">Record</button>
+        <button type="button" id="stopButton" disabled>Stop</button>
+    </form>
+
+    <h2>Recorded Audio Playback:</h2>
+    <audio id="playbackAudio" controls></audio>
+
+    <h2>Transcript:</h2>
+    <textarea id="transcript" style="width: 100%; height: 200px;" readonly>Your transcript will appear here...</textarea>
+
+    <h2>Text to Speech</h2>
+    <form id="synthesizeForm">
+        <input type="text" id="textInput" placeholder="Enter text to synthesize">
+        <button type="button" id="synthesizeButton">Synthesize Text</button>
+    </form>
+
+    <h2>Generated Audio:</h2>
+    <audio id="audioElement" controls></audio>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
